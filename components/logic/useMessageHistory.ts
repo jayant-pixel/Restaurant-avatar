@@ -1,7 +1,13 @@
-import { useStreamingAvatarContext } from "./context";
+import { useLiveAvatarContext } from "./context";
+
+export { MessageSender } from "./context";
+export type { Message } from "./context";
 
 export const useMessageHistory = () => {
-  const { messages } = useStreamingAvatarContext();
+  const { clearMessages, messages } = useLiveAvatarContext();
 
-  return { messages };
+  return {
+    messages,
+    clearMessages,
+  };
 };

@@ -5,12 +5,7 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {
-      fontFamily: {
-        sans: ["var(--font-sans)"],
-        mono: ["var(--font-geist-mono)"],
-      },
-    },
+    extend: {},
   },
   darkMode: "class",
 }

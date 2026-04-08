@@ -1,46 +1,27 @@
-import "@/styles/globals.css";
-import { Metadata } from "next";
-import { Fira_Code as FontMono, Inter as FontSans } from "next/font/google";
+import type { Metadata } from "next";
 
-import NavBar from "@/components/NavBar";
+import { Inter } from "next/font/google";
 
-const fontSans = FontSans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
+import { LiveAvatarProvider } from "@/components/logic";
 
-const fontMono = FontMono({
-  subsets: ["latin"],
-  variable: "--font-geist-mono",
-});
+import "../styles/globals.css";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: {
-    default: "HeyGen Interactive Avatar SDK Demo",
-    template: `%s - HeyGen Interactive Avatar SDK Demo`,
-  },
-  icons: {
-    icon: "/heygen-logo.png",
-  },
+  title: "Restaurant LiveAvatar",
+  description: "Restaurant agent with a LiveAvatar front-of-house experience.",
 };
 
-export default function RootLayout({
-  children,
-}: {
+type RootLayoutProps = {
   children: React.ReactNode;
-}) {
+};
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html
-      suppressHydrationWarning
-      className={`${fontSans.variable} ${fontMono.variable} font-sans`}
-      lang="en"
-    >
-      <head />
-      <body className="min-h-screen bg-black text-white">
-        <main className="relative flex flex-col gap-6 h-screen w-screen">
-          <NavBar />
-          {children}
-        </main>
+    <html lang="en">
+      <body className={inter.className}>
+        <LiveAvatarProvider>{children}</LiveAvatarProvider>
       </body>
     </html>
   );

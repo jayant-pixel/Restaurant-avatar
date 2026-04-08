@@ -1,7 +1,7 @@
-import { useStreamingAvatarContext } from "./context";
+import { useLiveAvatarContext } from "./context";
 
 export const useConnectionQuality = () => {
-  const { connectionQuality } = useStreamingAvatarContext();
+  const { connectionQuality } = useLiveAvatarContext();
 
   return {
     connectionQuality,

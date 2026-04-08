@@ -4,7 +4,8 @@ export { useConnectionQuality } from "./useConnectionQuality";
 export { useMessageHistory } from "./useMessageHistory";
 export { useInterrupt } from "./useInterrupt";
 export {
-  StreamingAvatarSessionState,
-  StreamingAvatarProvider,
+  AvatarSessionState,
+  LiveAvatarProvider,
   MessageSender,
+  StreamingAvatarProvider,
 } from "./context";
